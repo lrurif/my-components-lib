@@ -1,32 +1,24 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+        <VirtualList></VirtualList>
+        <f-table :data="[{name: '123'}]">
+          <el-table-column prop="name"></el-table-column>
+        </f-table>
     </div>
     <router-view/>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+  import VirtualList from "@/components/VirtualList"
+  import FTable from "@/components/FTable"
+  export default {
+    components: {
+      VirtualList,
+      FTable
     }
   }
-}
+</script>
+<style lang="scss">
+
 </style>
